@@ -10,3 +10,4 @@ before_install:
   - gcloud config set project sdgs-dgs-2342
   - gcloud config set compute/zone us-central1-a
   - gcloud container clusters get-credentials multi-cluster
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin

@@ -6,4 +6,7 @@ before_install:
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update kubectl
-  - gckoud auth activate-service-account --key-file service-account.json
+  - gckoud auth activate-service-account --key-file secret-file.json
+  - gcloud config set project sdgs-dgs-2342
+  - gcloud config set compute/zone us-central1-a
+  - gcloud container clusters get-credentials multi-cluster
